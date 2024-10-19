@@ -41,10 +41,10 @@ Menjelaskan tujuan dari pernyataan masalah:
 - Membangun model machine learning yang dapat mengidentifikasi pasien yang beresiko tinggi mengalami diabetes
 - Meningkatkan performa model prediksi melalui hyperparameter tuning dan beberapa teknik machine learning.
 
-    ### Solution statements
-    - Meenggunakan beberapa algoritma untuk klasifikasi yaitu Logistic Regression, Support Vector Machine, Random Forest, Gradient Boosting.
-    - Melakukan hyperparameter tuning untuk menemukan parameter terbaik setiap algoritma
-    - Membandingkan performa model dan memilih model terbaik berdasarkan Accuracy, Precision, Recall, dan F1 Score
+### Solution statements
+- Meenggunakan beberapa algoritma untuk klasifikasi yaitu Logistic Regression, Support Vector Machine, Random Forest, Gradient Boosting.
+- Melakukan hyperparameter tuning untuk menemukan parameter terbaik setiap algoritma
+- Membandingkan performa model dan memilih model terbaik berdasarkan Accuracy, Precision, Recall, dan F1 Score
 
 ## Data Understanding
 Dataset ini berasal dari National Institute of Diabetes and Digestive and Kidney Diseases. Tujuan dari kumpulan data ini adalah untuk memprediksi secara diagnostik apakah pasien menderita diabetes atau tidak, berdasarkan pengukuran diagnostik tertentu yang disertakan dalam kumpulan data. Secara khusus, semua pasien pada data adalah perempuan berusia minimal 21 tahun yang berasal dari suku Indian Pima
