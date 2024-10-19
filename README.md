@@ -225,7 +225,7 @@ GridSearchCV Dipakai untuk menguji berbagai kombinasi hyperparameter pada setiap
   - newton-cg, lbfgs, dan sag cocok untuk regularisasi l2,
   - liblinear dan saga bisa digunakan untuk l1 atau elasticnet.
 
-Pemilihan parameter ini mencakup opsi regularisasi yang membantu model menghindari overfitting pada data pelatihan, serta pengujian beberapa solver agar algoritma optimisasi bisa bekerja lebih efisien dengan dataset yang digunakan.
+Pemilihan parameter ini mencakup opsi regularisasi yang membantu model menghindari overfitting pada data pelatihan, serta pengujian beberapa solver agar algoritma optimisasi bisa bekerja lebih efisien dengan dataset yang digunakan. Dan parameter terbaik yaitu C=10, max_iter=3000, random_state=42, solver='liblinear' dengan akurasi 0.8492462311557789
 
 2. Support Vector Machine (SVM)
    
@@ -239,7 +239,7 @@ Pemilihan parameter ini mencakup opsi regularisasi yang membantu model menghinda
 - gamma: Mengontrol seberapa jauh pengaruh dari satu titik training terhadap titik lain. Nilai yang lebih besar membuat model lebih memfokuskan pada data poin yang dekat, sedangkan nilai kecil memperhitungkan poin yang lebih jauh. Ini sangat penting untuk mengontrol kompleksitas model pada SVM non-linier.
 - C: Parameter regularisasi yang mengontrol trade-off antara margin yang lebih lebar (yang akan memberikan generalisasi yang lebih baik) dan kesalahan klasifikasi pada training data. Nilai kecil dari C menghasilkan margin yang lebih besar, namun memperbolehkan beberapa data salah klasifikasi.
   
-Grid search ini mencoba beberapa nilai gamma untuk menangkap hubungan non-linier yang berbeda dalam data. C digunakan untuk mencari keseimbangan antara regularisasi dan akurasi pada training data. Kombinasi parameter ini membantu menemukan model SVM yang terbaik untuk dataset tersebut.
+Grid search ini mencoba beberapa nilai gamma untuk menangkap hubungan non-linier yang berbeda dalam data. C digunakan untuk mencari keseimbangan antara regularisasi dan akurasi pada training data. Kombinasi parameter ini membantu menemukan model SVM yang terbaik untuk dataset tersebut. Dan parameter terbaik yaitu C=20, gamma=0.1, probability=True, random_state=42 dengan aukrasi 0.8592964824120602
 
 3. Gradient Boosting Classifier
   Parameter yang digunakan:
@@ -258,7 +258,7 @@ param_grid = {
 - min_samples_split: Jumlah minimum sampel yang dibutuhkan untuk memecah node. Nilai yang lebih tinggi cenderung membuat model lebih sederhana dan mengurangi overfitting.
 - min_samples_leaf: Jumlah minimum sampel yang harus dimiliki oleh setiap daun pohon. Mengontrol ukuran daun untuk menghindari pohon yang terlalu rumit.
   
-Parameter ini membantu mengatur kompleksitas pohon dalam Gradient Boosting dan mempengaruhi kemampuan model untuk menangkap pola dalam data tanpa overfitting. Dengan menguji berbagai nilai dari parameter-parameter ini, grid search berusaha mencari kombinasi yang memberikan performa terbaik.
+Parameter ini membantu mengatur kompleksitas pohon dalam Gradient Boosting dan mempengaruhi kemampuan model untuk menangkap pola dalam data tanpa overfitting. Dengan menguji berbagai nilai dari parameter-parameter ini, grid search berusaha mencari kombinasi yang memberikan performa terbaik. Dan parameter terbaik yaitu max_depth=5, min_samples_split=3, n_estimators=150, random_state=42 dengab akurasi 0.9246231155778895
 
 4. Random Forest Classifier
 Parameter yang digunakan:
@@ -278,21 +278,74 @@ Parameter yang digunakan:
 - max_features: Menentukan jumlah fitur yang akan dipertimbangkan saat membuat split di setiap node. Nilai sqrt dan log2 adalah pilihan umum untuk meningkatkan efisiensi tanpa mengorbankan akurasi. 0.5 dan 0.75 berarti proporsi dari total fitur yang digunakan.
 min_samples_split dan min_samples_leaf: Kontrol pembentukan pohon untuk memastikan setiap split atau daun memiliki sampel yang cukup untuk menghindari overfitting.
 
-Random Forest membutuhkan pengaturan parameter yang mengatur jumlah pohon dan bagaimana setiap pohon dibangun. Grid search ini menguji parameter untuk menemukan keseimbangan yang baik antara bias dan varians, serta untuk memastikan bahwa setiap pohon dalam hutan berkontribusi optimal pada prediksi final.
+Random Forest membutuhkan pengaturan parameter yang mengatur jumlah pohon dan bagaimana setiap pohon dibangun. Grid search ini menguji parameter untuk menemukan keseimbangan yang baik antara bias dan varians, serta untuk memastikan bahwa setiap pohon dalam hutan berkontribusi optimal pada prediksi final. Dan parameter terbaik yaitu max_depth=10, n_estimators=130, random_state=42 dengan akurasi 90.95%
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+**Model Terbaik**
+Berikut merupakan perbandingan dari performa model emppat algoritma dengan parameter terbaik
+![{DE3DE203-E6CF-4068-84C0-6B974793F343}](https://github.com/user-attachments/assets/a9cff6f5-bf73-4f7b-8078-9fbff8f0b41d)
+![{3B8FC87C-33F6-4B5E-B6BB-FD6B77B808DB}](https://github.com/user-attachments/assets/2228d402-8f62-43ef-985a-ea01800f7b96)
+- Accuracy: Proporsi prediksi yang benar di antara semua prediksi.
+    Gradient Boosting memiliki accuracy tertinggi (0.925), diikuti oleh Random Forest (0.910), sedangkan Logistic Regression dan SVM memiliki nilai yang sama di sekitar 0.849-0.859.
+- Precision: Proporsi prediksi positif yang benar dari semua prediksi positif. Precision tinggi berarti model memiliki sedikit "false positives."
+    Gradient Boosting dan Random Forest menunjukkan precision yang sama (0.925 dan 0.910), diikuti oleh SVM (0.859) dan Logistic Regression (0.849).
+- Recall: Proporsi kasus positif yang berhasil dideteksi dari total kasus positif yang sebenarnya (sensitivitas).
+    Model Gradient Boosting, Random Forest, dan SVM semuanya memiliki nilai recall yang sama (0.925 dan 0.910), sedangkan Logistic Regression sedikit lebih rendah di sekitar 0.849.
+- F1 Score: Harmonic mean antara precision dan recall, yang berguna ketika ada ketidakseimbangan antara kelas positif dan negatif.
+    Gradient Boosting memiliki nilai F1 tertinggi (0.925), diikuti oleh Random Forest (0.910), sedangkan SVM dan Logistic Regression memiliki skor F1 yang lebih rendah (0.850 dan 0.849).
+
+Maka Gradient Boosting dipilih menjadi model terbaik karena nilai dari akurasi, precision, recall, F1 Score diatas dari model yang lain yaitu 0.925
+
+
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
+**Penjelasan Mengenai Metrik yang Digunakan**
+- Accuracy: Mengukur seberapa sering model membuat prediksi yang benar dari keseluruhan dataset. Nilai accuracy Gradient Boosting adalah 0.925 atau 92,5%, yang berarti model memprediksi dengan benar 92,5% dari seluruh sampel.
 
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
+- Precision: Precision menghitung seberapa banyak dari prediksi positif yang benar-benar positif (true positives dari total predicted positives). Untuk Gradient Boosting, precision adalah 0.925 atau 92,5%. Ini menunjukkan bahwa dari semua prediksi kelas positif, 92,5% benar.
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+- Recall (Sensitivity): Mengukur seberapa banyak dari total kasus positif yang benar-benar berhasil diprediksi sebagai positif. Gradient Boosting memiliki recall sebesar 0.925, yang berarti model mampu mengidentifikasi 92,5% dari semua kasus positif.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+- F1 Score: Kombinasi antara precision dan recall, memberikan nilai yang seimbang antara keduanya. F1 Score Gradient Boosting adalah 0.925, yang menunjukkan model ini memiliki keseimbangan baik dalam precision dan recall.
+
+
+**Hasil proyek berdasarkan metrik evaluasi**
+
+Berdasarkan nilai yang tinggi dari accuracy, precision, recall, dan F1 score, Gradient Boosting menunjukkan kinerja yang sangat baik pada dataset yang digunakan. Dengan accuracy yang tinggi, model ini mampu memprediksi secara benar sebagian besar data. Precision yang tinggi menunjukkan bahwa model jarang salah ketika memberikan prediksi positif, sedangkan recall yang tinggi mengindikasikan bahwa hampir semua data positif dapat terdeteksi dengan baik. F1 Score yang tinggi juga menunjukkan bahwa model memiliki keseimbangan yang baik antara menangani "false positives" dan "false negatives."
+
+Secara keseluruhan, hasil evaluasi ini menunjukkan bahwa Gradient Boosting adalah model yang sangat handal untuk memprediksi data dalam konteks proyek ini. Nilai metrik yang seragam (0.925 di semua metrik) menunjukkan bahwa model tidak hanya akurat, tetapi juga konsisten dalam mendeteksi kelas positif tanpa mengabaikan proporsi yang signifikan dari data positif.
+
+**Formula Metrik dan Cara Kerjanya**
+
+Accuracy Formula:
+
+$$ Accuracy = \frac{TP+TN}{TP+TN+FP+FN} $$
+ 
+Dimana:
+
+- TP = True Positives (prediksi benar pada kelas positif)
+- TN = True Negatives (prediksi benar pada kelas negatif)
+- FP = False Positives (prediksi salah, kelas sebenarnya negatif)
+- FN = False Negatives (prediksi salah, kelas sebenarnya positif)
+
+Cara Kerja: Accuracy menghitung persentase dari semua prediksi yang benar, baik itu prediksi positif maupun negatif.
+
+Precision Formula:
+
+$$ Precision = \frac{TP)}{TP+FP} $$
+ 
+Cara Kerja: Precision fokus pada kualitas prediksi positif, mengukur seberapa banyak prediksi positif benar dari total prediksi positif yang diberikan model.
+
+Recall Formula:
+
+ $$ Recall = \frac{TP}{TP+FN} $$
+
+ 
+Cara Kerja: Recall mengukur kemampuan model untuk menangkap semua kasus positif yang sebenarnya dari keseluruhan sampel positif.
+
+F1 Score Formula:
+
+$$ F1 = 2 * \frac{Precision * Recall}{Precision + Recall} $$
+ 
+Cara Kerja: F1 Score memberikan keseimbangan antara precision dan recall, sangat berguna ketika distribusi kelas tidak seimbang atau jika penting untuk mempertimbangkan "false positives" dan "false negatives" secara bersamaan.
+
+Dalam konteks Gradient Boosting, semua metrik tersebut menunjukkan nilai tinggi yang menandakan bahwa model mampu menangani prediksi dengan tingkat kesalahan yang sangat rendah, baik dalam mendeteksi kelas positif maupun negatif.
