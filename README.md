@@ -162,7 +162,11 @@ Pada grafik diatas ada titik-titik yang menandakan bahwa terdapat fitur yang men
   df.loc[df["Glucose"] > 126 ,"NewGlucose"] = NewGlucose[3]
   ```
 - Kolom yang telah dilakukan Feature Engginering dilakukan encoding mengunakan one-hot-encoding. Setiap kategori akan diwakili oleh satu kolom baru. Jika suatu sampel termasuk dalam kategori tertentu, maka nilai pada kolom yang sesuai akan menjadi 1, sedangkan kolom lainnya akan bernilai 0.
-- Pisahkan dataset menjadi fitur dan target
+- Pisahkan dataset menjadi fitur dan target sebagai berikut :
+  ```python
+  y=df['Outcome']
+  X=df.drop(['Outcome'], axis=1)
+  ```
 - Split Dataset dengan perbandingan 80:20
 - Feature scaling menggunakan MinMaxScaler yang merubah data menjadi rentang 0 sampai 1 dengan rumus sebagai berikut
   
