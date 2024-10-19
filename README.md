@@ -2,24 +2,30 @@
 
 ## Domain Proyek
 
-Diabetes melitus (DM) menurut definisi World Health Organization (WHO) adalah penyakit degeneratif kronik yang disebabkan oleh kurangnya produksi insulin di pankreas atau ketidakmampuan tubuh untuk menggunakan insulin yang diproduksi secara efektif, dengan hiperglikemia (peningkatan glukosa darah) sebagai indikator utamanya.
+WHO (World Health Organization) melaporkan bahwa sekitar 1,6 juta orang meninggal setiap tahun akibat diabetes [[1]](https://doi.org/10.1016/j.icte.2021.02.004) Diabetes adalah penyakit yang memengaruhi kemampuan tubuh dalam memproduksi hormon insulin, yang pada gilirannya membuat metabolisme karbohidrat menjadi tidak normal dan meningkatkan kadar glukosa dalam darah [[2]](https://doi.org/10.1016/j.procs.2018.05.122).
 
-Data International Diabetes Federation (IDF) tahun 2021 menunjukkan bahwa 537 juta orang dewasa (usia 20-79 tahun) hidup dengan diabetes, dan angka ini diperkirakan akan meningkat menjadi 643 juta pada tahun 2030 dan 783 juta pada tahun 2045. Hal ini menunjukkan perlunya peningkatan kewaspadaan terhadap bahaya diabetes.
+Penelitian tentang pasien diabetes menunjukkan bahwa diabetes di kalangan orang dewasa (di atas 18 tahun) telah meningkat dari 4,7% menjadi 8,5% pada tahun 1980 hingga 2014 dan berkembang pesat di negara-negara dunia kedua dan ketiga. Hasil statistik pada tahun 2017 menunjukkan bahwa 451 juta orang hidup dengan diabetes di seluruh dunia, yang akan meningkat menjadi 693 juta pada tahun 2045 [[3]](https://doi.org/10.1109/ACCESS.2020.2989857).
 
-Prediksi dini diabetes sangat penting untuk mencegah atau menunda timbulnya komplikasi serius yang terkait dengan penyakit ini. Dengan mengetahui risiko diabetes sejak dini, individu dapat mengambil langkah-langkah pencegahan seperti mengubah gaya hidup, meningkatkan aktivitas fisik, dan mengatur pola makan.
+Prediksi dini penyakit diabetes diperlukan untuk dapat dikendalikan dan menyelamatkan nyawa manusia [[4]](https://doi.org/10.32520/stmsi.v10i1.1129) . Karena gejalanya yang mirip dengan kondisi sakit biasa, banyak orang yang tidak menyadari bahwa
+mereka mengidap penyakit diabetes dan bahkan sudah mengarah pada komplikasi [[5]](https://www.ijert.org/research/diabetes-prediction-using-machine-learning-techniques-IJERTV9IS090496.pdf)
 
-**Mengapa Permasalahan harus diselesaikan ?**:
+**Mengapa Permasalahan harus diselesaikan ?**
 - Penyakit Diabetes menjadi salah satu penyebab utama kematian di dunia.
 - Komplikasi diabetes dapat menyebabkan penyakit lain seperti penyakit jantung, stroke, kerusakan ginjal, dan kebutaan dapat mengancam nyawa.
 - Pengobatan diabetes membutuhkan biaya yang tinggi, baik untuk perawatan jangka pendek maupun jangka panjang
     
 **Referensi Terkait**
-- [Analysis and Prediction of Diabetes Using Machine Learning](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3368308) 
-- [Diabetes Prediction Using Ensembling of Different Machine Learning Classifiers](https://doi.org/10.1109/ACCESS.2020.2989857)
-- [Prediction of Diabetes using Classification Algorithms](https://doi.org/10.1016/j.procs.2018.05.122)
-- [A comparison of machine learning algorithms for diabetes prediction](
-https://doi.org/10.1016/j.icte.2021.02.004)
-- [Diabetes Prediction using Machine Learning Techniques](https://www.ijert.org/research/diabetes-prediction-using-machine-learning-techniques-IJERTV9IS090496.pdf)
+
+[[1]](https://doi.org/10.1016/j.icte.2021.02.004) J. J. Khanam and S. Y. Foo, “A comparison of machine learning algorithms for diabetes prediction,” ICT Express, vol. 7, no. 4, pp. 432–439, Dec. 2021, doi: 10.1016/j.icte.2021.02.004.
+
+[[2]](https://doi.org/10.1016/j.procs.2018.05.122)	D. Sisodia and D. S. Sisodia, “Prediction of Diabetes using Classification Algorithms,” Procedia Comput Sci, vol. 132, pp. 1578–1585, 2018, doi: 10.1016/j.procs.2018.05.122.
+
+[[3]](https://doi.org/10.1109/ACCESS.2020.2989857)	Md. K. Hasan, Md. A. Alam, D. Das, E. Hossain, and M. Hasan, “Diabetes Prediction Using Ensembling of Different Machine Learning Classifiers,” IEEE Access, vol. 8, pp. 76516–76531, 2020, doi: 10.1109/ACCESS.2020.2989857.
+
+[[4]](https://doi.org/10.32520/stmsi.v10i1.1129)	W. Apriliah, I. Kurniawan, M. Baydhowi, and T. Haryati, “Prediksi Kemungkinan Diabetes pada Tahap Awal Menggunakan Algoritma Klasifikasi Random Forest,” SISTEMASI, vol. 10, no. 1, p. 163, Jan. 2021, doi: 10.32520/stmsi.v10i1.1129.
+
+[[5]](https://www.ijert.org/research/diabetes-prediction-using-machine-learning-techniques-IJERTV9IS090496.pdf)    M.Soni, S Varma "Diabetes Prediction using Machine Learning
+Techniques," IJERT, Vol. 9 No 09 p. 921-925 Sep. 2020
 
 
 ## Business Understanding
