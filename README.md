@@ -128,9 +128,10 @@ Pada grafik diatas ada titik-titik yang menandakan bahwa terdapat fitur yang men
 - Removing Outliers: Menghapus data yang memiliki nilai outliers pada kolom tertentu.
 - Feature Engginering : Merubah Fitur numerik menjadi Kategorikal
 - Encoding Categorical Variables: Mengubah variabel kategorikal menjadi variabel numerik menggunakan teknik one-hot encoding.
+- Pisahkan dataset menjadi fitur dan target
+- Split Dataset untuk training dan testing dengan presentase 80:20
 - Feature Scaling: Melakukan standarisasi pada fitur numerik untuk memastikan semua fitur berada dalam skala yang sama.
 - Oversampling untuk menangani data imbalance
-- Pembagian Dataset untuk training dan testing dengan presentase 80:20
 
 **Proses Data Preparation**: 
 - Fitur yang memiliki jumlah missing value akan dilakukan imputasi dengan nilai median dari kelas yang sama Artinya, nilai hilang pada suatu fitur akan diisi dengan median dari fitur yang sama, namun hanya untuk data yang termasuk dalam kelas yang sama. Ini berguna jika terdapat perbedaan distribusi nilai antara kelas-kelas yang berbeda.
@@ -161,11 +162,12 @@ Pada grafik diatas ada titik-titik yang menandakan bahwa terdapat fitur yang men
   df.loc[df["Glucose"] > 126 ,"NewGlucose"] = NewGlucose[3]
   ```
 - Kolom yang telah dilakukan Feature Engginering dilakukan encoding mengunakan one-hot-encoding. Setiap kategori akan diwakili oleh satu kolom baru. Jika suatu sampel termasuk dalam kategori tertentu, maka nilai pada kolom yang sesuai akan menjadi 1, sedangkan kolom lainnya akan bernilai 0.
+- Pisahkan dataset menjadi fitur dan target
+- Split Dataset dengan perbandingan 80:20
 - Feature scaling menggunakan MinMaxScaler yang merubah data menjadi rentang 0 sampai 1 dengan rumus sebagai berikut
   
     $$ x' = \frac{X - X_{min}}{X_{max} - X_{min}} $$
 - Penanganan Kelas yang tidak seimbang dengan menggunakan SMOTE. Synthetic Minority Over-sampling Technique (SMOTE) adalah teknik oversampling yang menghasilkan data sintetis untuk kelas minoritas dengan cara menginterpolasi data yang ada. SMOTE memilih sampel acak dari kelas minoritas, kemudian mencari k-nearest neighbor terdekat. Selanjutnya, SMOTE akan membuat data sintetis baru di sepanjang garis yang menghubungkan sampel asli dengan k-nearest neighbor-nya.
-- Split Dataset dengan perbandingan 80:20
 
 
 **Alasan Dilakukan Data Preparation**
@@ -173,9 +175,10 @@ Pada grafik diatas ada titik-titik yang menandakan bahwa terdapat fitur yang men
 - Removing outliers untuk meningkatkan akurasi model dengan menghilangkan data yang dapat mempengaruhi performa model. LOF dipilih karena sangat berguna untuk mendeteksi outlier yang tidak mengikuti pola distribusi normal.
 - Fature Engginering / Mengubah variabel numerik menjadi kategorikal sering dilakukan untuk Menangkap pola non-linear dalam data, Mengurangi kompleksitas model, Meningkatkan interpretabilitas model.
 - Setelah variabel diubah menjadi kategorikal, kita perlu mengubahnya menjadi representasi numerik yang dapat dipahami oleh algoritma machine learning. One-Hot Encoding adalah teknik yang paling umum digunakan untuk mengubah variabel kategorikal menjadi vektor biner.
+- Pisahkan dataset menjadi fitur dan target sebelum melakukan split training dan testing
+- Perbandingan 80:20 adalah perbandingan yang umum digunakan untuk membagi dataset menjadi data latih (80%) dan data uji (20%). Data latih digunakan untuk melatih model, sedangkan data uji digunakan untuk mengevaluasi kinerja model.
 - MinMaxScaler akan mentransformasi nilai fitur ke dalam rentang 0 sampai 1. Hal ini berguna untuk Mempercepat proses pelatihan model dan Menghindari dominasi fitur dengan skala yang sangat berbeda.
 - Oversampling dilakukan karena jumlah data pada satu kelas jauh lebih banyak dibandingkan kelas lainnya, model cenderung bias ke kelas mayoritas dalam memprediksi.
-- Perbandingan 80:20 adalah perbandingan yang umum digunakan untuk membagi dataset menjadi data latih (80%) dan data uji (20%). Data latih digunakan untuk melatih model, sedangkan data uji digunakan untuk mengevaluasi kinerja model.
 
 ## Modeling
 Pada proyek ini, beberapa model supervised learning diterapkan untuk tugas klasifikasi. Model-model tersebut meliputi:
@@ -285,6 +288,8 @@ min_samples_split dan min_samples_leaf: Kontrol pembentukan pohon untuk memastik
 
 Random Forest membutuhkan pengaturan parameter yang mengatur jumlah pohon dan bagaimana setiap pohon dibangun. Grid search ini menguji parameter untuk menemukan keseimbangan yang baik antara bias dan varians, serta untuk memastikan bahwa setiap pohon dalam hutan berkontribusi optimal pada prediksi final. Dan parameter terbaik yaitu max_depth=10, n_estimators=130, random_state=42 dengan akurasi 90.95%
 
+## Evaluation
+
 **Model Terbaik**
 Berikut merupakan perbandingan dari performa model emppat algoritma dengan parameter terbaik
 ![{DE3DE203-E6CF-4068-84C0-6B974793F343}](https://github.com/user-attachments/assets/a9cff6f5-bf73-4f7b-8078-9fbff8f0b41d)
@@ -298,11 +303,8 @@ Berikut merupakan perbandingan dari performa model emppat algoritma dengan param
 - F1 Score: Harmonic mean antara precision dan recall, yang berguna ketika ada ketidakseimbangan antara kelas positif dan negatif.
     Gradient Boosting memiliki nilai F1 tertinggi (0.925), diikuti oleh Random Forest (0.910), sedangkan SVM dan Logistic Regression memiliki skor F1 yang lebih rendah (0.850 dan 0.849).
 
-Maka Gradient Boosting dipilih menjadi model terbaik karena nilai dari akurasi, precision, recall, F1 Score diatas dari model yang lain yaitu 0.925
+Maka Gradient Boosting dipilih menjadi model terbaik karena nilai dari akurasi, precision, recall, F1 Score diatas dari model yang lain yaitu 0.9
 
-
-
-## Evaluation
 **Penjelasan Mengenai Metrik yang Digunakan**
 - Accuracy: Mengukur seberapa sering model membuat prediksi yang benar dari keseluruhan dataset. Nilai accuracy Gradient Boosting adalah 0.925 atau 92,5%, yang berarti model memprediksi dengan benar 92,5% dari seluruh sampel.
 
