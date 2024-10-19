@@ -37,7 +37,6 @@ Techniques," IJERT, Vol. 9 No 09 p. 921-925 Sep. 2020
 
 ### Goals
 
-Menjelaskan tujuan dari pernyataan masalah:
 - Membangun model machine learning yang dapat mengidentifikasi pasien yang beresiko tinggi mengalami diabetes
 - Meningkatkan performa model prediksi melalui hyperparameter tuning dan beberapa teknik machine learning.
 
