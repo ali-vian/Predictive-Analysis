@@ -1,8 +1,12 @@
-# Laporan Proyek Machine Learning - Nama Anda
+# Laporan Proyek Machine Learning - Muhammad Alivian Sidiq
 
 ## Domain Proyek
 
-Pada bagian ini, kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
+Diabetes melitus (DM) menurut definisi World Health Organization (WHO) adalah penyakit degeneratif kronik yang disebabkan oleh kurangnya produksi insulin di pankreas atau ketidakmampuan tubuh untuk menggunakan insulin yang diproduksi secara efektif, dengan hiperglikemia (peningkatan glukosa darah) sebagai indikator utamanya.
+
+Data International Diabetes Federation (IDF) tahun 2021 menunjukkan bahwa 537 juta orang dewasa (usia 20-79 tahun) hidup dengan diabetes, dan angka ini diperkirakan akan meningkat menjadi 643 juta pada tahun 2030 dan 783 juta pada tahun 2045. Hal ini menunjukkan perlunya peningkatan kewaspadaan terhadap bahaya diabetes.
+
+Prediksi dini diabetes sangat penting untuk mencegah atau menunda timbulnya komplikasi serius yang terkait dengan penyakit ini. Dengan mengetahui risiko diabetes sejak dini, individu dapat mengambil langkah-langkah pencegahan seperti mengubah gaya hidup, meningkatkan aktivitas fisik, dan mengatur pola makan.
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
