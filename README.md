@@ -319,6 +319,7 @@ Random Forest membutuhkan pengaturan parameter yang mengatur jumlah pohon dan ba
 **Model Terbaik**
 
 Berikut merupakan perbandingan dari performa model emppat algoritma dengan parameter terbaik
+![{49267EA8-A388-4A12-A756-BEA7744094E3}](https://github.com/user-attachments/assets/9b901852-e3c2-4abd-b836-fc5fc76df4a5)
 ![{DE3DE203-E6CF-4068-84C0-6B974793F343}](https://github.com/user-attachments/assets/a9cff6f5-bf73-4f7b-8078-9fbff8f0b41d)
 ![{3B8FC87C-33F6-4B5E-B6BB-FD6B77B808DB}](https://github.com/user-attachments/assets/2228d402-8f62-43ef-985a-ea01800f7b96)
 - Accuracy: Proporsi prediksi yang benar di antara semua prediksi.
@@ -330,7 +331,7 @@ Berikut merupakan perbandingan dari performa model emppat algoritma dengan param
 - F1 Score: Harmonic mean antara precision dan recall, yang berguna ketika ada ketidakseimbangan antara kelas positif dan negatif.
     Gradient Boosting memiliki nilai F1 tertinggi (0.925), diikuti oleh Random Forest (0.910), sedangkan SVM dan Logistic Regression memiliki skor F1 yang lebih rendah (0.850 dan 0.849).
 
-Maka Gradient Boosting dipilih menjadi model terbaik karena nilai dari akurasi, precision, recall, F1 Score diatas dari model yang lain yaitu 0.9
+Maka Gradient Boosting dipilih menjadi model terbaik karena nilai dari akurasi, precision, recall, F1 Score diatas dari model yang lain yaitu 0.925
 
 **Penjelasan Mengenai Metrik yang Digunakan**
 - Accuracy: Mengukur seberapa sering model membuat prediksi yang benar dari keseluruhan dataset. Nilai accuracy Gradient Boosting adalah 0.925 atau 92,5%, yang berarti model memprediksi dengan benar 92,5% dari seluruh sampel.
