@@ -74,6 +74,10 @@ Setelah memahami deskripsi variabel pada data, langkah selanjutnya adalah mengec
 
 ![{0BA7C2FA-4A90-4EBC-829F-0213EFA64185}](https://github.com/user-attachments/assets/1c741cf0-f029-4e63-b9ee-f45a349ab4c0)
 
+- Jumlah Data
+  | Baris | Kolom |
+  |-------|-------|
+  | 768 | 8|
 - Terdapat 2 kolom dengan tipe float64, yaitu: BMI dan DiabetesPedigreeFunction 
 - Terdapat 6 kolom numerik dengan tipe data int64 yaitu: Pregnancies, Glucose, BloodPressure, SkinTickness, Insulin, Age, Outcome (ini merupakan terget fitur kita) .
 
@@ -220,6 +224,10 @@ GridSearchCV Dipakai untuk menguji berbagai kombinasi hyperparameter pada setiap
 
 1. Logistic Regression
 
+  Cara Kerja :
+  
+Logistic regression berkerja dengan memprediksi probabilitas sebuah data termasuk dalam suatu kelas tertentu (misalnya, 0 atau 1). Algoritma ini menggunakan fungsi logit (sigmoid) untuk memodelkan hubungan antara variabel input dan output biner. Fungsi sigmoid mengubah hasil linear menjadi nilai probabilitas antara 0 dan 1, dan kemudian membulatkan hasilnya untuk memberikan prediksi kelas.
+  
   Parameter yang digunakan:
   ```python
   param_grid = {
@@ -240,6 +248,10 @@ GridSearchCV Dipakai untuk menguji berbagai kombinasi hyperparameter pada setiap
 Pemilihan parameter ini mencakup opsi regularisasi yang membantu model menghindari overfitting pada data pelatihan, serta pengujian beberapa solver agar algoritma optimisasi bisa bekerja lebih efisien dengan dataset yang digunakan. Dan parameter terbaik yaitu C=10, max_iter=3000, random_state=42, solver='liblinear' dengan akurasi 0.8492462311557789
 
 2. Support Vector Machine (SVM)
+
+   Cara Kerja :
+
+   SVM bekerja dengan memetakan data ke dalam ruang berdimensi tinggi untuk mencari hyperplane yang paling baik memisahkan kelas yang berbeda. Algoritma ini mencoba memaksimalkan margin antara dua kelas, yaitu jarak antara data dari dua kelas ke hyperplane. Jika data tidak dapat dipisahkan secara linear, SVM dapat menggunakan kernel (seperti kernel Gaussian atau polinomial) untuk memproyeksikan data ke dimensi yang lebih tinggi, memungkinkan pemisahan yang lebih efektif
    
    Parameter yang digunakan:
    ```python
@@ -254,6 +266,11 @@ Pemilihan parameter ini mencakup opsi regularisasi yang membantu model menghinda
 Grid search ini mencoba beberapa nilai gamma untuk menangkap hubungan non-linier yang berbeda dalam data. C digunakan untuk mencari keseimbangan antara regularisasi dan akurasi pada training data. Kombinasi parameter ini membantu menemukan model SVM yang terbaik untuk dataset tersebut. Dan parameter terbaik yaitu C=20, gamma=0.1, probability=True, random_state=42 dengan aukrasi 0.8592964824120602
 
 3. Gradient Boosting Classifier
+
+  Cara Kerja :
+
+  Gradient Boosting berkerja membangun model secara bertahap, dengan menambahkan model baru yang memprediksi kesalahan model sebelumnya. Model baru ini dilatih untuk memperbaiki kesalahan residu dari model sebelumnya. Gradient Boosting melibatkan penurunan gradien untuk mengoptimalkan fungsi kerugian. Algoritma ini terus menambahkan model hingga mencapai tingkat akurasi yang memadai atau jumlah iterasi tertentu.
+   
   Parameter yang digunakan:
   ```python
 param_grid = {
@@ -273,6 +290,11 @@ param_grid = {
 Parameter ini membantu mengatur kompleksitas pohon dalam Gradient Boosting dan mempengaruhi kemampuan model untuk menangkap pola dalam data tanpa overfitting. Dengan menguji berbagai nilai dari parameter-parameter ini, grid search berusaha mencari kombinasi yang memberikan performa terbaik. Dan parameter terbaik yaitu max_depth=5, min_samples_split=3, n_estimators=150, random_state=42 dengab akurasi 0.9246231155778895
 
 4. Random Forest Classifier
+
+Cara Kerja :
+
+Random Forest menggunakan banyak decision tree untuk membuat prediksi. Setiap pohon decision tree dilatih menggunakan subset data acak dan subset fitur yang berbeda (bagging). Setiap pohon menghasilkan prediksi, dan hasil akhir adalah rata-rata prediksi (untuk regresi) atau voting mayoritas (untuk klasifikasi) dari semua pohon
+
 Parameter yang digunakan:
   ```python
   param_grid = {
@@ -295,6 +317,7 @@ Random Forest membutuhkan pengaturan parameter yang mengatur jumlah pohon dan ba
 ## Evaluation
 
 **Model Terbaik**
+
 Berikut merupakan perbandingan dari performa model emppat algoritma dengan parameter terbaik
 ![{DE3DE203-E6CF-4068-84C0-6B974793F343}](https://github.com/user-attachments/assets/a9cff6f5-bf73-4f7b-8078-9fbff8f0b41d)
 ![{3B8FC87C-33F6-4B5E-B6BB-FD6B77B808DB}](https://github.com/user-attachments/assets/2228d402-8f62-43ef-985a-ea01800f7b96)
